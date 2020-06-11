@@ -46,8 +46,8 @@ module.exports = {
         new MiniCSSExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
-            filename: '[name].[chunkhash:10].css',
-            chunkFilename: '[name].[chunkhash:4].css'
+            filename: '[name].css',
+            chunkFilename: '[name].css'
         }),
         new BundleTracker({ path: 'dist', filename: './webpack-stats.json', logTime: true }),
         new CleanWebpackPlugin({

@@ -1,0 +1,37 @@
+{% load render_bundle from webpack_loader %}
+{% load i18n static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    {% block extrastyle %}{% endblock %}
+    {% render_bundle 'base' 'css'%}
+    {% render_bundle 'index' 'css'%}
+    {% render_bundle 'vendors' 'css'%}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+</head>
+
+<body>
+    {% block messages %}
+        {% if messages %}
+        <ul class="messagelist">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message|capfirst }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% endblock messages %}
+
+    {% block content %}{% endblock content %}
+    {% block footer %}<div id="footer"></div>{% endblock %}
+</body>
+{% render_bundle 'base' 'js'%}
+{% render_bundle 'vendors' 'js'%}
+{% render_bundle 'index' 'js'%}
+
+</html>
