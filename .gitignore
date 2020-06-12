@@ -427,7 +427,6 @@ $RECYCLE.BIN/
 ### Wintersmith ###
 contents/
 plugins/
-templates/
 config.json
 
 

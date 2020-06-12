@@ -1,3 +1,2 @@
-require('admin-lte');
+import '../css/base.scss';
 
-// resources/sass/

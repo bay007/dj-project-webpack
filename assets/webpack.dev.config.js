@@ -27,7 +27,17 @@ module.exports = {
                     'css-loader',
                     // Compiles Sass to CSS
                     'sass-loader',
-                ],
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: 'postcss',
+                            plugins: [
+                                require('tailwindcss'),
+                                require('autoprefixer'),
+                            ],
+                        },
+                    },
+                ]
             },
         ]
     },
@@ -57,7 +67,7 @@ module.exports = {
     ],
     optimization: {
         splitChunks: {
-            name:"vendors",
+            name: "vendors",
             chunks: 'all',
         },
     },
