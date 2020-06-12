@@ -67,3 +67,14 @@ The reazon is, at start time, we don't have any vendor javascript code.
 or
 
 2.- Add extenrnal dependences like Lodash, lodash will be bundled in verndors.[hash].js 
+
+
+
+TODO: 
+* ENV variables support
+* Add shell_plus
+* Add custom user model withouth username
+* Add support for post_office for email
+* Add Recaptcha for login
+* Add Axes for block multi intent login
+* Add DRF basic support
