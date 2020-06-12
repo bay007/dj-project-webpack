@@ -5,12 +5,14 @@ django-admin startproject --template=https://codeload.github.com/bay007/dj-proje
 ```
 
 2.- Install js dependences.
+
 ```ssh
 cd assets
 [yarn|npm] install
 ```
 
 3.- Start develop server
+
 ```ssh
 assets> yarn run watch
 cd ..
@@ -21,14 +23,25 @@ python manage.py runserver
 Example: We are going to create notifications.html
 Create a new notifications.html extended from base. (you can inspire in login.html)
 Create a new `notifications.js` and `notifications.css` in `src/js` and `src/css`
-Inside `notifications.js` include at first line 
+Inside `notifications.js` include at first line
 `import '../css/notifications.scss';`
 Add `src/js/notifications.js` to `assets/mix.js`
 
-
 4.- Redy to deploy.
-Run 
+Run
+
 ```ssh
 yarn run build
 ```
+
 `assets/dist` directory will be created with files ready to production.
+
+5.- If you want to add new templates, you must add at `assets/tailwind.config.js`
+in content section, thus, only css used in templates will be in final dist bundles.
+
+```ssh
+purge: {
+    enabled: true,
+    content: ['../core/templates/**/*.html'],
+}
+```
