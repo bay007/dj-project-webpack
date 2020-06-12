@@ -8,14 +8,14 @@
     <div class="w-1/3">
         <h1 class="font-hairline mb-6 text-center">Login to our Website</h1>
         {% if form.errors %}
-            <p class="text-center text-red-500">El usuario o password no es válido.</p>
+            <p class="text-center text-red">El usuario o password no es válido.</p>
         {% endif %}
         
         {% if next %}
             {% if user.is_authenticated %}
-            <p class="text-center text-red-500">Tu cuenta no tiene acceso a la página.</p>
+            <p class="text-center text-red">Tu cuenta no tiene acceso a la página.</p>
             {% else %}
-            <p class="text-center text-red-500">Inicie sesión para acceder a la página.</p>
+            <p class="text-center text-red">Inicie sesión para acceder a la página.</p>
             {% endif %}
         {% endif %}
         
