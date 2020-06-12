@@ -45,3 +45,25 @@ purge: {
     content: ['../core/templates/**/*.html'],
 }
 ```
+
+
+
+NOTE:
+When you access to /login/ page a error will raised:
+```
+WebpackBundleLookupError at /login/
+Cannot resolve bundle vendors.
+est Method:	GET
+Request URL:	http://127.0.0.1:8000/login/
+Django Version:	2.1.2
+Exception Type:	WebpackBundleLookupError
+Exception Value:	
+Cannot resolve bundle vendors.
+```
+The reazon is, at start time, we don't have any vendor javascript code. 
+
+1.- To fix, remove 'vendor' bundle in base.html
+
+or
+
+2.- Add extenrnal dependences like Lodash, lodash will be bundled in verndors.[hash].js 
